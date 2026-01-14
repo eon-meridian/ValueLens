@@ -1,0 +1,5 @@
+waivers:
+  - rule_id: VL-TRACK-001
+    owner: platform-team
+    justification: "Telemetry required for incident response; redaction work in progress."
+    expires: 2026-03-01
