@@ -1,0 +1,34 @@
+{
+  "tool": "valuelens",
+  "version": "0.1.0",
+  "generated_at": "2026-01-14T17:14:36.413545Z",
+  "target": ".",
+  "findings": [
+    {
+      "rule_id": "VL-PRIV-001",
+      "title": "Logging request body",
+      "description": "Request body logging may expose PII",
+      "severity": "High",
+      "confidence": 0.7,
+      "axes": [
+        [
+          "privacy",
+          1.0
+        ]
+      ],
+      "evidence": [
+        {
+          "file": "demo/sample.rs",
+          "line": 2,
+          "snippet": null
+        }
+      ],
+      "waived": {
+        "owner": "platform-team",
+        "justification": "Telemetry required for incident response; redaction work in progress.",
+        "expires": "2026-03-01",
+        "status": "active"
+      }
+    }
+  ]
+}

@@ -1,33 +1,10 @@
 rules:
   - id: VL-PRIV-001
-    title: "Possible logging of request body"
-    description: "Logging request bodies can capture credentials/PII. Prefer structured logs with redaction."
+    title: Logging request body
+    description: Request body logging may expose PII
     severity: high
-    confidence: 0.75
-    globs: ["**/*.rs", "**/*.ts", "**/*.js", "**/*.py"]
-    pattern: "(?i)(debug!\(|info!\(|warn!\(|error!\(|println!\().*(request|req).*(body|payload)"
+    confidence: 0.7
+    globs: ["**/*.rs"]
+    pattern: '(?i)println!\(.*request.*body'
     axes:
-      privacy: 0.9
-      accountability: 0.2
-
-  - id: VL-TRACK-001
-    title: "Telemetry / analytics dependency present"
-    description: "Third-party analytics can shift systems toward surveillance defaults. Verify consent and minimization."
-    severity: medium
-    confidence: 0.70
-    globs: ["**/Cargo.toml", "**/package.json", "**/requirements.txt"]
-    pattern: "(?i)(segment|mixpanel|amplitude|posthog|fullstory|sentry|datadog|newrelic)"
-    axes:
-      privacy: 0.6
-      optimization_pressure: 0.6
-
-  - id: VL-POWER-001
-    title: "Admin/superuser signal"
-    description: "Operator power should be accountable (audit logs, approvals, least privilege)."
-    severity: high
-    confidence: 0.60
-    globs: ["**/*.rs", "**/*.ts", "**/*.go", "**/*.java"]
-    pattern: "(?i)(superuser|god_mode|admin_only|is_admin\s*==\s*true|role\s*==\s*\"admin\")"
-    axes:
-      coercive_power: 0.7
-      accountability: 0.6
+      privacy: 1.0

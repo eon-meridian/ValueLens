@@ -1,0 +1,72 @@
+# ============================
+# Rust / Cargo
+# ============================
+target/
+**/target/
+
+# Compiled binaries (manual or copied)
+valuelens
+valuelens.exe
+
+# Explicit debug / release dirs (extra safety)
+debug/
+release/
+target/
+
+# ============================
+# Debuggers & crash artifacts
+# ============================
+# LLDB
+.lldb/
+lldb.log
+
+# GDB
+.gdb_history
+gdb.txt
+
+# Rust backtraces / crashes
+*.stackdump
+core
+core.*
+
+# ============================
+# Generated reports (CI artifacts)
+# ============================
+valuelens.json
+valuelens.md
+valuelens.sarif
+valuelens-drift.json
+valuelens-drift.md
+
+# ============================
+# Logs & temp files
+# ============================
+*.log
+*.tmp
+*.temp
+
+# ============================
+# OS / Editor junk
+# ============================
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ============================
+# Node / Python (demo repos)
+# ============================
+node_modules/
+__pycache__/
+*.pyc
+
+# ============================
+# Local env / secrets
+# ============================
+.env
+.env.*
+

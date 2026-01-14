@@ -3,3 +3,7 @@ waivers:
     owner: platform-team
     justification: "Telemetry required for incident response; redaction work in progress."
     expires: 2026-03-01
+  - rule_id: VL-PRIV-001
+    owner: platform-team
+    justification: "Telemetry required for incident response; redaction work in progress."
+    expires: 2026-03-01

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json.schemastore.org/sarif-2.1.0.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "level": "note",
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "demo/sample.rs"
+                },
+                "region": {
+                  "startLine": 2
+                }
+              }
+            }
+          ],
+          "message": {
+            "text": "Logging request body (confidence 0.70) [waiver: active until 2026-03-01]"
+          },
+          "ruleId": "VL-PRIV-001"
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "valuelens",
+          "rules": [
+            {
+              "fullDescription": {
+                "text": "Request body logging may expose PII"
+              },
+              "id": "VL-PRIV-001",
+              "name": "Logging request body",
+              "properties": {
+                "precision": 70
+              },
+              "shortDescription": {
+                "text": "Logging request body"
+              }
+            }
+          ],
+          "version": "0.1.0"
+        }
+      }
+    }
+  ],
+  "version": "2.1.0"
+}

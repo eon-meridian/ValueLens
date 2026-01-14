@@ -50,6 +50,30 @@ Compare two reports:
 ./target/release/valuelens drift --baseline baseline.json --current valuelens.json --format md --out-prefix valuelens-drift
 ```
 
+
+## Declared values + contradictions
+Create a `valuelens.yml` to declare acceptable axis ranges. ValueLens will report **aligned / drift / contradiction**.
+
+Example:
+```yaml
+axis_max:
+  privacy: 0.50
+axis_min:
+  accountability: 0.20
+```
+After running, inspect:
+- `valuelens.json`
+- `valuelens.md` (includes axis summary)
+- `valuelens.sarif`
+
+
+## Wavers
+Identify the rules you want to wave: jq -r '.findings[]
+  | select((.severity=="High" or .severity=="Critical") and (.confidence >= 0.7))
+  | .rule_id' valuelens.json | sort -u
+
+Add to valuelens_wavers.yml
+
 ## Rules
 Rules are YAML-defined regex checks with file globs. See `rules/default.yml`.
 

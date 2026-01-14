@@ -1,0 +1,21 @@
+# ValueLens declared values (v0)
+#
+# Axis expectations are based on the *confidence-weighted* axis totals produced by a scan.
+# Smaller / negative numbers are not "better" in the abstract—these are repo-specific targets.
+#
+# Start by running:
+#   valuelens scan .
+# and then set the thresholds below based on what acceptable looks like for your system.
+
+intent:
+  privacy: 'minimize data exposure and third-party tracking'
+  accountability: 'admin actions should be auditable'
+  optimization_pressure: 'avoid default-on telemetry and growth-only instrumentation'
+
+axis_max:
+  privacy: 0.50
+  coercive_power: 0.25
+  optimization_pressure: 0.75
+
+axis_min:
+  accountability: 0.20
